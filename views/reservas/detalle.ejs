@@ -1,0 +1,25 @@
+<h2>Detalle de la Reserva</h2>
+
+<p><strong>Fecha de Inicio:</strong> <%= reserva.fechaInicio %></p>
+<p><strong>Fecha de Fin:</strong> <%= reserva.fechaFin %></p>
+
+<!-- Formulario para editar la reserva -->
+<form action="/reservas/editar/<%= reserva.id %>" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+    <label for="fechaInicio">Fecha de Inicio:</label>
+    <input type="date" name="fechaInicio" value="<%= reserva.fechaInicio %>" required>
+    
+    <label for="fechaFin">Fecha de Fin:</label>
+    <input type="date" name="fechaFin" value="<%= reserva %>" required>
+
+    <button type="submit">Guardar Cambios</button>
+</form>
+
+<!-- Formulario para eliminar la reserva -->
+<form action="/reservas/eliminar/<%= reserva.id %>" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar esta reserva?');">Eliminar Reserva</button>
+</form>
+
+<a href="/reservas">Volver a las reservas</a>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas</title>
+</head>
+<body>
+    <h1>Mis Reservas</h1>
+    
+    <h2>Lista de Reservas</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% reservas.forEach(reserva => { %>
+                <tr>
+                    <td><%= reserva.fechaInicio %></td>
+                    <td><%= reserva.fechaFin %></td>
+                    <td><%= reserva.estado || 'Pendiente' %></td>
+                    <td>
+                        <a href="/reservas/<%= reserva.id %>">Ver Detalle</a> 
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <a href="/apartamentos">Volver al inicio</a>
+</body>
+</html>

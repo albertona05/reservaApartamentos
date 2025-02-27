@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle del Apartamento</title>
+</head>
+<body>
+    <h1><%= apartamento.nombre %></h1>
+    <p>Ubicación: <%= apartamento.ubicacion %></p>
+    <p>Precio: $<%= apartamento.precio %></p>
+
+    <h2>Reservar Apartamento</h2>
+    <form action="/reservas/crear/<%= apartamento.id %>" method="POST">
+        
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <label for="fechaInicio">Fecha Inicio:</label>
+        <input type="date" id="fechaInicio" name="fechaInicio" required>
+
+        <label for="fechaFin">Fecha Fin:</label>
+        <input type="date" id="fechaFin" name="fechaFin" required>
+
+        <button type="submit">Reservar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Apartamentos</title>
+</head>
+<body>
+    <h1>Apartamentos Disponibles</h1>
+    <ul>
+        <% apartamentos.forEach(apartamento => { %>
+            <li>
+                <a href="/apartamentos/<%= apartamento.id %>"><%= apartamento.nombre %></a> - 
+                <%= apartamento.ubicacion %> - 
+                $<%= apartamento.precio %>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
