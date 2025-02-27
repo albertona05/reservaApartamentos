@@ -15,7 +15,7 @@ La aplicación **Sistema de Reservas de Apartamentos** es una plataforma web dis
 ## Tecnologías Utilizadas
 
 - **Backend:** Node.js con Express
-- **Base de Datos:** MongoDB
+- **Base de Datos:** MYSQL
 - **Autenticación:** JWT para manejo de sesiones
 - **Seguridad:** bcryptjs para cifrado de contraseñas, csurf para protección contra CSRF, express-validator para validación de entradas
 - **Pruebas:** Mocha, Chai, Sinon, Artillery
